@@ -1,0 +1,39 @@
+
+/* Comment in CSS */
+.body {
+    font-size: 16px;
+    color: #333;
+}
+ 
+.container {
+    background-color: #f4f4f4;
+    border: 1px solid #999;
+}
+ 
+.button {
+    background-color: #007acc;
+    padding: 10px;
+    color: #fff;
+}
+ 
+/* Nested selectors */
+.header .logo {
+    color: #ff6600;
+}
+ 
+/* Class selector with int attribute */
+.info-box {
+    border-width: 2;
+    border-color: #777;
+}
+ 
+/* Class selector with hex color attribute */
+.warning-box {
+    background-color: #ff0000;
+    border: 2px solid #00ff00;
+}
+ 
+.link {
+    text-decoration: none;
+    color: #009900;
+}
