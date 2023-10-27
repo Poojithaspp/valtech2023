@@ -200,7 +200,7 @@ public class DepartmentTable implements DepartmentDAO{
 
 	private Connection getConnection() throws SQLException {
 
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/valtech2023", "root", "root");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/valtech12023", "root", "root");
 
 	}
 

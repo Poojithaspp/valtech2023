@@ -1,7 +1,7 @@
 package com.valtech.training.day1;
 
-import com.valtech.training.week1.Adder;
-import com.valtech.training.week1.AdderImpl;
+import com.valtech.training.week2.Adder;
+import com.valtech.training.week2.AdderImpl;
 
 public class StringTest {
 

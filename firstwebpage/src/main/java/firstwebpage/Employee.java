@@ -7,17 +7,19 @@ public class Employee {
 	private int experience;
 	private int seniority;
 	private int salary;
+	private int did;
 
 	public Employee() {
 	}
 
-	public Employee(String name, int age, int experience, int seniority, int salary) {
+	public Employee(String name, int age, int experience, int seniority, int salary,int did) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.experience = experience;
 		this.seniority = seniority;
 		this.salary = salary;
+		this.did=did;
 	}
 
 	public Employee(int id, String name, int age, int experience, int seniority, int salary) {
@@ -28,6 +30,7 @@ public class Employee {
 		this.experience = experience;
 		this.seniority = seniority;
 		this.salary = salary;
+		this.did=did;
 	}
 
 	@Override
@@ -82,5 +85,11 @@ public class Employee {
 
 	public void setSalary(int salary) {
 		this.salary = salary;
+	}
+	public int getdid() {
+		return did;
+	}
+	public void setdid(int did) {
+		this.did=did;
 	}
 }
