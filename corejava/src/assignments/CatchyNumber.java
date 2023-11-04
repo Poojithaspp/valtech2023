@@ -1,4 +1,7 @@
 package assignments;
+
+import java.util.Scanner;
+
 public class CatchyNumber {
     public static String findCatchyNumber(String[] numbers) {
         String catchyNumber = null;
@@ -17,12 +20,12 @@ public class CatchyNumber {
     }
  
     // Calculate the catchiness score based on various criteria
-    private static int calculateCatchinessScore(String number) {
+    public static int calculateCatchinessScore(String number) {
         int score = 0;
  
         // Criteria: Repetitive numbers
         if (hasRepetitiveNumbers(number)) {
-            score += 3;
+            score += 1;
         }
  
         // Criteria: First half and second half equality
@@ -35,13 +38,14 @@ public class CatchyNumber {
         return score;
     }
  
-    private static boolean hasRepetitiveNumbers(String number) {
+    public static boolean hasRepetitiveNumbers(String number) {
         // Implement logic to check for repetitive numbers (e.g., "77777")
         // You can use regular expressions or a loop to check for repetitions.
-        return false; // Replace with your logic
+    	  return number.matches(".*(\\d)\\1{2,}.*");
+    	   // Replace with your logic
     }
  
-    private static boolean isFirstHalfEqualToSecondHalf(String number) {
+    public static boolean isFirstHalfEqualToSecondHalf(String number) {
         int length = number.length();
         if (length % 2 == 0) {
             int halfLength = length / 2;
@@ -49,13 +53,17 @@ public class CatchyNumber {
             String secondHalf = number.substring(halfLength);
             return firstHalf.equals(secondHalf);
         }
-        return false;
+        return true;
     }
  
     public static void main(String[] args) {
         String[] numbers = {"7777770777", "123454321", "8888888","7777177771"};
         String catchyNumber = findCatchyNumber(numbers);
         System.out.println("The most catchy number is: " + catchyNumber);
+    
+     
+        
+        
     }
 }
 

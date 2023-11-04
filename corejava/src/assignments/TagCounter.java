@@ -26,7 +26,7 @@ public class TagCounter {
 
         Map<String, Integer> tagCount = new HashMap<>();
 
-        BufferedReader reader = new BufferedReader(new FileReader("Counter.html"));
+        BufferedReader reader = new BufferedReader(new FileReader("CounterTest.html"));
 
         String line;
 
