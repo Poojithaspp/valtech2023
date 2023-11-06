@@ -1,6 +1,6 @@
 package com.valtech.training.day2.test;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
