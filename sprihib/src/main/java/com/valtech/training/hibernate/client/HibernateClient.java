@@ -21,6 +21,8 @@ import com.valtech.training.hibernate.BankAccountId;
 import com.valtech.training.hibernate.ChequeTx;
 import com.valtech.training.hibernate.Customer;
 import com.valtech.training.hibernate.Employee;
+import com.valtech.training.hibernate.OrderSummary;
+import com.valtech.training.hibernate.OrderSummaryId;
 import com.valtech.training.hibernate.Registration;
 import com.valtech.training.hibernate.TellerTx;
 import com.valtech.training.hibernate.Tx;
@@ -35,13 +37,18 @@ public class HibernateClient {
 		cfg.addAnnotatedClass(Customer.class).addAnnotatedClass(Address.class);
 		cfg.addAnnotatedClass(Account.class);
 		cfg.addAnnotatedClass(Registration.class).addAnnotatedClass(BankAccount.class);
+		cfg.addAnnotatedClass(OrderSummary.class);
 		SessionFactory sesFac = cfg.buildSessionFactory();
 		Session ses = sesFac.openSession();
 		Transaction tx = ses.beginTransaction();
-        ses.persist(new BankAccount(new BankAccountId("SB",1),30000));
-		
-		BankAccountId id = new BankAccountId("SB",1);
-		BankAccount ba = (BankAccount)ses.load(BankAccount.class, id);
+		ses.persist(new BankAccount(new BankAccountId("SB", 1), 30000));
+
+		BankAccountId id = new BankAccountId("SB", 1);
+		BankAccount ba = (BankAccount) ses.load(BankAccount.class, id);
+		ses.persist(new OrderSummary(1, 2, 3));
+		OrderSummary os = (OrderSummary) ses.load(OrderSummary.class, new OrderSummaryId(1, 2));
+		System.out.println("quantity=" + os.getQuantity());
+
 //		Customer cus = new Customer("Abc", 23);
 //		ses.save(cus);
 //
@@ -96,7 +103,7 @@ public class HibernateClient {
 //				ses.createQuery("Select t from Tx t join t.account.customers c where c.address.city=? and t.amount>?");
 		query.setString(0, "Blr");
 		query.setFloat(1, 3000);
-		query.list().forEach(t ->System.out.println(t));
+		query.list().forEach(t -> System.out.println(t));
 //	ses.persist(new Employee("Abc",LocalDate.of(1947, 8, 15),20000,'M',false));
 //		int id= (Integer)ses.save(new Employee("Abc",df.parse("15-08-1947"),20000,'M',false));
 //		System.out.println(id);

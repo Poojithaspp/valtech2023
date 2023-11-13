@@ -1,4 +1,4 @@
-package com.valtech.training.spring;
+package com.valtech.training.firstspringboot.components;
 
 public class SimpleInterestImpl implements SimpleInterest{
 	public SimpleInterestImpl() {

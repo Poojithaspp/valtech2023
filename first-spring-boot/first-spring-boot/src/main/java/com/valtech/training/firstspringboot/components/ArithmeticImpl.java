@@ -1,6 +1,6 @@
-package com.valtech.training.spring;
+package com.valtech.training.firstspringboot.components;
 
-public class Arithmeticimpl implements Arithmetic {
+public class ArithmeticImpl implements Arithmetic {
 
 	@Override
 	public int add(int a, int b) {
@@ -25,7 +25,7 @@ public class Arithmeticimpl implements Arithmetic {
 		return a/b;
 	}
 	public static void main(String[] args) {
-		Arithmetic a= new Arithmeticimpl();
+		Arithmetic a= new ArithmeticImpl();
 		System.out.println(a.add(2,3));
 		try{
 			System.out.println(a.div(5, 0)); 
