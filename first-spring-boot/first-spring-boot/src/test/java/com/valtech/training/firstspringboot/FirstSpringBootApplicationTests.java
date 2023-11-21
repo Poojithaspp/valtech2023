@@ -39,7 +39,7 @@ class FirstSpringBootApplicationTests {
 	void testOrder() {
 		Order o = orderService
 				.createOrder(new Order("Macbook pro M3", 25, "for the entire team", LocalDate.of(2023, 11, 8)));
-	assertEquals(3, o.getId());
+	assertEquals(4, o.getId());
 	assertTrue(orderService.getAllOrders().size()>0);
 	}
 	

@@ -36,7 +36,10 @@ public class Tx {
 	private float amount;
 	@ManyToOne(targetEntity = Account.class, cascade = { CascadeType.MERGE, CascadeType.PERSIST,
 			CascadeType.REFRESH }, fetch = FetchType.EAGER)
-	@JoinColumn(name = "account_id", referencedColumnName = "id")
+
+
+	
+	
 	private Account account;
 
 	public Tx(float amount) {

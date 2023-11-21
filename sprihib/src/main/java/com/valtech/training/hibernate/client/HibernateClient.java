@@ -100,7 +100,7 @@ public class HibernateClient {
 //		query.setFloat(0, 3000);
 //		query.list().forEach(t -> System.out.println(t));	
 		Query query = ses.getNamedQuery("Tx.findAllByCityAndAmountGreaterThan");
-//				ses.createQuery("Select t from Tx t join t.account.customers c where c.address.city=? and t.amount>?");
+//			ses.createQuery("Select t from Tx t join t.account.customers c where c.address.city=? and t.amount>?");
 		query.setString(0, "Blr");
 		query.setFloat(1, 3000);
 		query.list().forEach(t -> System.out.println(t));
